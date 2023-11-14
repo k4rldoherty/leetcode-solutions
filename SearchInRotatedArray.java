@@ -5,7 +5,7 @@
 public class SearchInRotatedArray {
     public static void main(String[] args) {
         int[] nums = { 6, 7, 1, 2, 3, 4, 5 };
-        int target = 6;
+        int target = 5;
         System.out.println(search(nums, target));
     }
 
@@ -15,11 +15,12 @@ public class SearchInRotatedArray {
         // binary search
         if (peak == -1) {
             return binarySearch(nums, target, 0, nums.length - 1);
-        } else {
-            if (binarySearch(nums, target, 0, peak) == -1) {
-                return binarySearch(nums, target, peak + 1, nums.length - 1);
-            }
+        } else if(target == nums[peak]){
+            return peak;
+        } else if(target >= nums[0]) {
             return binarySearch(nums, target, 0, peak);
+        } else {
+            return binarySearch(nums, target, peak + 1, nums.length - 1);
         }
     }
 

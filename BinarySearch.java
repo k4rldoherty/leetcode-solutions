@@ -15,7 +15,7 @@ public class BinarySearch {
         while (start <= end) {
             // method for finding the middle of the array that never gives an int too large
             // error
-            int mid = start + (end - start / 2);
+            int mid = start + (end - start) / 2;
 
             // if the target int is larger than the int at the middle element of the array
             if (target > arr[mid]) {
@@ -40,7 +40,7 @@ public class BinarySearch {
 
         while (start <= end) {
 
-            int mid = start + (end - start / 2);
+            int mid = start + (end - start) / 2;
 
             if (target < arr[mid]) {
 
