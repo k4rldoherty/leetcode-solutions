@@ -55,6 +55,7 @@ public class BinarySearchSortedMatrix {
         // run the loop until 2 rows are remaining.
         while(rowStart <= (rowEnd - 1)) { // until there are 2 rows remaining
             int mid = rowStart + (rowEnd - rowStart) / 2;
+            
             if(matrix[mid][midCol] == target) {
                 return new int[] {mid, midCol};
             } else if(matrix[mid][midCol] < target) {
